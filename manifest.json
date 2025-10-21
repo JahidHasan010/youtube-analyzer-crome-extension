@@ -1,0 +1,46 @@
+{
+    "manifest_version": 3,
+    "name": "Jahid2 YouTube Comment Analyzer",
+    "version": "5.0",
+    "description": "Analyzes YouTube comments using a machine learning model.",
+    
+    "permissions": [
+      "storage",
+      "tabs",
+      "activeTab",
+      "scripting"
+    ],
+    
+    "host_permissions": [
+      "https://www.googleapis.com/*",
+      "https://www.youtube.com/*",
+      "https://youtu.be/*",
+      "http://127.0.0.1/*",
+      "http://localhost/*",
+      "http://0.0.0.0/*"
+    ],
+    
+    "background": {
+      "service_worker": "scripts/background.js"
+    },
+    
+    "content_scripts": [
+      {
+        "matches": [
+          "https://www.youtube.com/*",
+          "https://youtu.be/*"
+        ],
+        "js": ["scripts/content.js"]
+      }
+    ],
+    
+    "action": {
+      "default_popup": "popup.html",
+      "default_icon": "assets/icon_128.png"
+    },
+    
+    "content_security_policy": {
+      "extension_pages": "script-src 'self'; object-src 'self';"
+    }
+  }
+  

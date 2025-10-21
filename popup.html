@@ -1,0 +1,81 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>YouTube Comment Analyzer Dashboard</title>
+    <link rel="stylesheet" href="styles/popup.css">
+    <!-- <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.0/dist/chart.umd.min.js"></script> -->
+     <!-- Load Chart.js locally -->
+    <script src="assets/libs/chart.umd.min.js" defer></script>
+    <!-- ✅ Chart.js plugin for labels (local copy) -->
+   <script src="assets/libs/chartjs-plugin-datalabels.min.js" defer></script>
+
+</head>
+<body>
+
+    <header class="header">
+        <h1>YouTube Comment Dashboard</h1>
+    </header>
+
+    <main class="main-dashboard">
+
+        <div class="left-column">
+            <div id="sentiment-overview" class="card-grid">
+                <div class="card total-comments-card">
+                    <h3 class="card-title">Total Comments</h3>
+                    <p id="total-comments-count" class="card-count">0</p>
+                </div>
+            </div>
+
+            <div id="detailed-breakdown-container"></div>
+
+            <div class="section-card">
+                <h3 class="section-title">Sentiment Timeline</h3>
+                <div class="chart-container">
+                    <canvas id="timeline-chart"></canvas>
+                </div>
+            </div>
+            
+            <div class="section-card">
+                <h3 class="section-title">Overall Sentiment Distribution</h3>
+                <div class="chart-container">
+                    <canvas id="overall-sentiment-chart"></canvas>
+                </div>
+            </div>
+        </div>
+
+        <div class="left-column">
+            <div class="section-card">
+                <h3 class="section-title">Top Keywords (Word Cloud)</h3>
+                <div id="word-cloud-container" class="word-cloud-container"></div>
+            </div>
+
+            <div class="section-card">
+                <h3 class="section-title">Topic-Based Sentiment</h3>
+                <div class="chart-container">
+                    <canvas id="topic-sentiment-chart"></canvas>
+                </div>
+            </div>
+
+            <div class="section-card">
+                <h3 class="section-title">Top Emojis</h3>
+                <div id="emoji-analysis-container" class="emoji-grid"></div>
+            </div>
+
+            <div class="section-card">
+                <h3 class="section-title">Top Recent Comments</h3>
+                <div id="top-comments-container" class="comments-list"></div>
+            </div>
+        </div>
+    </main>
+
+    <footer class="footer">
+        <p>&copy; 2025 YouTube Comment Analyzer. Built with Vanilla JS & Standard CSS.</p>
+    </footer>
+
+    <script src="scripts/popup.js"></script>
+
+</body>
+</html>
